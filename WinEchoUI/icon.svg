@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 100 100">
+	<circle cx="50" cy="50" fill="black" r="40"  />
+	<text x="28" y="65" font-family="verdana" font-weight="bold" fill="black" stroke="yellow" stroke-width="0.2" font-size="30" >
+		WE
+	</text>
+	<text x="23" y="60" font-family="verdana" font-weight="bold" fill="black" stroke="yellow" stroke-width="0.5" font-size="30" >
+		WE
+	</text>
+	<text x="18" y="55" font-family="verdana" font-weight="bold" fill="white" stroke="white" stroke-width="1" font-size="30" >
+		WE
+	</text>
+</svg>

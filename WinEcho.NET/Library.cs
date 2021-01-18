@@ -9,7 +9,7 @@ namespace WinEcho.NET
 	internal static class Library
 	{
 		internal const string LibName = "WinEcho.dll";
-		internal const string LibName_x86 = "nativeì\\x86\\WinEcho.dll";
+		internal const string LibName_x86 = "native\\x86\\WinEcho.dll";
 		internal const string LibName_x64 = "native\\x64\\WinEcho.dll";
 
 		static Library() {
