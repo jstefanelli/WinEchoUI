@@ -73,5 +73,8 @@ namespace WinEcho.NET
 
 		[DllImport(LibName, CallingConvention = CallingConvention.Cdecl)]
 		internal static extern void streamInstanceStop(IntPtr streamInstance, bool wait);
+
+		[DllImport(LibName, CallingConvention = CallingConvention.Cdecl)]
+		internal static extern int streamInstanceGetError(IntPtr streamInstance);
 	}
 }

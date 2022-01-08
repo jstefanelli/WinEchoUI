@@ -9,7 +9,6 @@ namespace WinEcho.NET
 	public class Device : IDisposable
 	{
 		private bool disposedValue;
-
 		internal IntPtr Handle { get; set; }
 		internal Device(IntPtr handle){
 			Handle = handle;
@@ -54,6 +53,19 @@ namespace WinEcho.NET
 		}
 
 		public string FullName => $"{Description()} ({Name()})";
+
+		public override bool Equals(object obj)
+		{
+			if(obj is Device dev){
+				return Id() == dev.Id();
+			}
+			return false;
+		}
+
+		public override int GetHashCode()
+		{
+			return Id().GetHashCode();
+		}
 
 		protected virtual void Dispose(bool disposing)
 		{
