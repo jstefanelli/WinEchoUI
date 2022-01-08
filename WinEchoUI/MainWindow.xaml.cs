@@ -115,13 +115,31 @@ namespace WinEchoUI
 			b.Source = Devices;
 			c.SetBinding(StreamControl.DevicesProperty, b);
 			c.Deleted += StreamControl_Deleted;
+            c.Errors += StreamControl_Errors;
 			Controls.Add(c);
 			controlsPanel.Children.Add(c);
 
 			return c;
 		}
 
-		private void btnAddStream_Click(object sender, RoutedEventArgs e)
+        private void StreamControl_Errors(object sender, StreamControl.ErrorsEventArgs e)
+        {
+			if (sender is not StreamControl ctrl)
+            {
+				return;
+            }
+
+			string noDeviceText = "{No Device}";
+			string errorCaption = $"Erros from stream:";
+			string errorText = $"Stream:\n{(ctrl.CaptureDevice != null ? ctrl.CaptureDevice.FullName : noDeviceText)}\nto\n{(ctrl.RenderDevice != null ? ctrl.RenderDevice.FullName : noDeviceText)}\n\nErrors:";
+			foreach(StreamInstance.Error err in e.Errors)
+            {
+				errorText += $"\n{err}";
+            }
+			MessageBox.Show(errorText, errorCaption, MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void btnAddStream_Click(object sender, RoutedEventArgs e)
 		{
 			AddControl();
 		}
